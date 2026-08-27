@@ -374,7 +374,7 @@
                         </div>
                         <div>
                             <h3 class="font-bold text-lg text-slate-800">Weeks 2 - 4: Periodic, Monthly & Edge Case Tasks</h3>
-                            <p class="text-slate-500 text-xs">Financial closes, reporting cycles, quarterly maintenance, and emergency escalations.</p>
+                            <p class="text-slate-500 text-xs">Financial closes, reporting cycles, quarterly maintenance, annual renewals, and emergency escalations.</p>
                         </div>
                         <div id="roadmapPhase3" class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
                             <!-- JS Populated -->
@@ -466,7 +466,7 @@
                     </div>
                     <div>
                         <div class="font-semibold text-slate-500 uppercase">System / Software Links</div>
-                        <div class="font-medium text-slate-800 mt-0.5" id="modalLinks">-</div>
+                        <div class="font-medium text-slate-800 mt-0.5 break-all" id="modalLinks">-</div>
                     </div>
                 </div>
 
@@ -543,9 +543,11 @@
 
                     <div>
                         <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Category *</label>
-                        <input type="text" id="formCategory" required placeholder="e.g., Daily Routines, IT, Admin" list="categoryOptions" class="w-full text-sm border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                        <input type="text" id="formCategory" required placeholder="e.g., Daily Routines, Software Renewals, IT, Admin" list="categoryOptions" class="w-full text-sm border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500 focus:outline-none">
                         <datalist id="categoryOptions">
                             <option value="Daily Routines"></option>
+                            <option value="Software Renewals"></option>
+                            <option value="Special Programs & Events"></option>
                             <option value="Weekly & Monthly Tasks"></option>
                             <option value="Software & Admin"></option>
                             <option value="Client Escalations"></option>
@@ -702,7 +704,11 @@
             accessSystems: [
                 { id: "acc1", name: "Jira & Confluence", purpose: "Task tracking, documentation, and customer tickets", level: "Admin / Lead", contact: "IT Helpdesk (it@company.com)" },
                 { id: "acc2", name: "AWS Console", purpose: "Server management, batch logs, S3 bucket storage", level: "Developer Access", contact: "DevOps Lead (devops@company.com)" },
-                { id: "acc3", name: "Stripe Billing Portal", purpose: "Refunding clients and issuing manual invoices", level: "Finance Operations", contact: "Finance Director" }
+                { id: "acc3", name: "Stripe Billing Portal", purpose: "Refunding clients and issuing manual invoices", level: "Finance Operations", contact: "Finance Director" },
+                { id: "acc4", name: "Droplet Platform", purpose: "Departments Dataset (0YEO5Z) & Annual Software Review Form (yRPM4K)", level: "Admin / Dataset Editor", contact: "Kevin / Tech Dept" },
+                { id: "acc5", name: "nVision Accounting Software", purpose: "Entering purchase orders & software renewal requisitions", level: "PO / Purchasing User", contact: "Business Office / RK Pandya" },
+                { id: "acc6", name: "SW BOCES Library FYI 'Menu'", purpose: "Reviewing & ordering library database subscriptions (Checkout user)", level: "Checkout User", contact: "Darlene Viruet (dviruet@swboces.org)" },
+                { id: "acc7", name: "Frontline Education Portal", purpose: "Cyber Camp workshop activity creation, teacher registrations, credit tracking, and pre-assignment approvals", level: "Activity Admin / Creator", contact: "Dawn / IT Helpdesk" }
             ],
             documents: [
                 {
@@ -728,23 +734,123 @@
                     ]
                 },
                 {
-                    id: "doc-2",
-                    title: "Quarterly Vendor Invoice Audit & Reconciliation",
-                    category: "Financial & Audit",
-                    priority: "Medium",
-                    estTime: "45 mins",
+                    id: "doc-8",
+                    title: "Annual Cyber Camp Planning, Preparation & Execution",
+                    category: "Special Programs & Events",
+                    priority: "High",
+                    estTime: "3 hours (Spread Jan-July)",
                     timeline: "Phase 3",
-                    summary: "Standard operating procedure to match vendor invoices against purchase orders before approving payments.",
-                    prereqs: "Stripe Admin & Accounting Portal",
-                    contact: "Finance Dept (billing@company.com)",
+                    summary: "Complete end-to-end SOP for organizing Summer Cyber Camp, including timelines, Save-the-Date flyers, Frontline activity creation, stipend tracking with Tim Kaltenecker, snack orders, and daily execution.",
+                    prereqs: "Frontline Activity Creator Access, Google Workspace (Drive & Sheets), Amazon Purchasing Account",
+                    contact: "Tim Kaltenecker (Budget/Stipends) / Dawn (Pre-assignments) / Kevin & BTCs / Ying Quan (Business Office)",
+                    links: "https://www.byramhills.org/academics/profesional-learning/cyber-camp-2026",
                     steps: [
-                        { title: "Export Unpaid Invoices", detail: "Download CSV of all pending vendor invoices from the Finance Portal." },
-                        { title: "Cross-reference with PO Register", detail: "Match invoice amounts against signed Purchase Orders in Google Drive." },
-                        { title: "Submit Approved Ledger", detail: "Email approved ledger to Finance VP for final signoff." }
+                        { 
+                            title: "January: Initial Planning Kickoff", 
+                            detail: "Meet with Building Technology Coordinators (BTCs) and Kevin to start planning Cyber Camp for the summer." 
+                        },
+                        { 
+                            title: "March / April: 'Save the Date' Flyer & Inquiry Routing", 
+                            detail: "Create Cyber Camp 'Save the Date' flyer (Google Drive template). Share with BTCs for teacher distribution. Route questions: CC content questions -> BTCs; Frontline tech issues, attendance, stipends & credits -> Yourself." 
+                        },
+                        { 
+                            title: "May: Budget Meeting & Stipend Prep", 
+                            detail: "Meet with Tim Kaltenecker to discuss budget. Calculate stipends: 4 BTCs get $750/day ($12,000 total); Teachers receive $375/day or $50/hr. Update cutoff dates on 'Stipend Process' doc and update dates/workshop titles on 'Stipend Waitlist Form'. Track stipends continuously and meet Tim K again if budget limits are reached." 
+                        },
+                        { 
+                            title: "May: Snack Ordering & Website Update", 
+                            detail: "In May (before budget closes), order snacks from Amazon: 3 boxes breakfast bars, 3 boxes chips, 140 coffee pods. Update the Cyber Camp website page." 
+                        },
+                        { 
+                            title: "May: Frontline Activities Setup & Pre-Assignments", 
+                            detail: "Create 3-4 activities in Frontline (copy previous year's activities). Obtain Pre-Assignment links and descriptions from Dawn. Add the pre-assignment link as a STEP in each Frontline activity." 
+                        },
+                        { 
+                            title: "Post-Posting: Attendance Master Sheet & Registrations", 
+                            detail: "Copy last year's Cyber Camp Attendance Master Sheet. Clear teacher names/buildings, and update workshop titles on all tabs. As teachers register and are approved in Frontline, enter them into the MASTER sheet so data auto-populates across tabs." 
+                        },
+                        { 
+                            title: "Cyber Camp Days: Setup & Sign-Ins", 
+                            detail: "Print daily sign-in sheets from the Attendance Sheet and give them to BTCs. Set up snacks and coffee daily. Ensure teachers mark the pre-assignment step as completed in Frontline before issuing final approvals." 
+                        },
+                        { 
+                            title: "Post-Event: Roster Clean-Up, Credits & Payroll Submission", 
+                            detail: "Review signed sheets for absences and remove no-shows from Frontline & Attendance sheet. Bulk award credit (0.50 credit / 7.5 hrs) and mark complete in Frontline roster. Prepare and submit final stipend sheet to Ying Quan in the Business Office." 
+                        }
                     ],
                     completedSteps: [],
                     isCompleted: false,
-                    tips: "Always check for early payment discount clauses on software renewals!",
+                    tips: "CRITICAL MANDATE: Never give final Frontline approvals unless the pre-assignment step is marked complete! Keep close track of teacher stipends so you can review the stipend waitlist with Tim K before hitting budget caps.",
+                    notes: [
+                        { author: "Alex R.", text: "Make sure snack orders are submitted BEFORE the May fiscal budget cutoff date!", date: "2026-08-25" }
+                    ]
+                },
+                {
+                    id: "doc-5",
+                    title: "Annual Software Renewals: District Paid Workflow",
+                    category: "Software Renewals",
+                    priority: "High",
+                    estTime: "2 hours",
+                    timeline: "Phase 3",
+                    summary: "Complete timeline and procedure for District-paid software renewals including Droplet dataset updates, sending reviews, nVision PO creation, vendor quote tracking, and invoice submission.",
+                    prereqs: "Droplet Access (Datasets & Forms), nVision Access, 'All Tech Software' Google Sheet, U Drive / Google Drive Client",
+                    contact: "Kevin / Tim F. / RK Pandya",
+                    steps: [
+                        { title: "March/April: Update Droplet 'Departments' Dataset (0YEO5Z)", detail: "Open Droplet dataset 0YEO5Z, click 'New Draft' on top left. For each building & department, update software details according to the 'All Tech Software' sheet (Coser/PO#, DPA, Faculty/Student Licenses, Total Amount). Click 'Publish'. This updates the dropdown on the Annual Software Review form (yRPM4K)." },
+                        { title: "Send Annual Software Review Form", detail: "Distribute the Annual Software Review form (yRPM4K) link to all Department Chairs, Directors, and Principals." },
+                        { title: "Prepare Data in 'All Tech Software' Sheet", detail: "Create a new tab for the upcoming school year (e.g. 27-28). Copy 26-27 data across, edit dates, delete old PO numbers, update renewal quote links, adjust prices/licenses, and add notes from review submissions." },
+                        { title: "May: Request Vendor Quotes", detail: "Once renewals are confirmed with buildings & directors, email vendors using addresses from the All Tech sheet. Store quotes in Google Drive folder 'Renewal Quotes for [Year]' and share with Kevin." },
+                        { title: "Mid-June: Enter Renewals in nVision", detail: "Copy quote folder to U drive (or use Google Drive client via Tim F.). In nVision, copy last year's PO for existing software or create new POs. CRITICAL: Select 7/1 as PO date so new budget funds are accessible. Set subscription expiration dates to July 1 next year. Save & close for Kevin and Business Office approvals." },
+                        { title: "Print & Log PO Numbers", detail: "Once approved by Business Office (end of June), print 'Receiving Copy' of POs. Enter new PO numbers into the PO column on the All Tech sheet." },
+                        { title: "July: Request & Interoffice Invoices", detail: "Request vendor invoices if not already received. Attach invoices to POs (or stamp as required). Interoffice all 'ok to pay' POs to RK Pandya." },
+                        { title: "Ongoing: Mid-Year Software Purchases", detail: "When new software is purchased during the school year, create the PO, add the software to the All Tech sheet, and update the Droplet dataset." }
+                    ],
+                    completedSteps: [],
+                    isCompleted: false,
+                    tips: "MANDATORY RULE: You MUST choose 7/1 as the date for ALL renewal POs in nVision, otherwise the new budget amounts will not be available! Share the quotes folder with Kevin as soon as created.",
+                    notes: []
+                },
+                {
+                    id: "doc-6",
+                    title: "Annual Software Renewals: LHRIC Paid Workflow",
+                    category: "Software Renewals",
+                    priority: "Medium",
+                    estTime: "45 mins",
+                    timeline: "Phase 3",
+                    summary: "Process for managing regional software subscriptions through LHRIC, attending RFS meetings, coordinating software removals/additions, and obtaining proposal signatures.",
+                    prereqs: "All Tech Software Sheet, LHRIC Account Manager Contact",
+                    contact: "Kevin / LHRIC Account Manager / Building Tech Coordinators (BTCs)",
+                    steps: [
+                        { title: "Attend Regular RFS Meetings", detail: "Participate in weekly/monthly RFS meetings with LHRIC representatives and Kevin." },
+                        { title: "Coordinate Software Removals", detail: "After Annual Software Review data is received, review with Kevin and BTCs to identify software to remove from RFS. Notify the LHRIC Account Manager of removals for the upcoming school year." },
+                        { title: "Process New Software Additions", detail: "Notify LHRIC Account Manager when Kevin approves new software additions. LHRIC will send a proposal requiring signatures from Kevin and/or Kelly. Return signed proposal to LHRIC." },
+                        { title: "Record Changes in Master Sheet", detail: "Document all additions, changes, and removals in the designated bottom section of the 'All Tech Software' spreadsheet." }
+                    ],
+                    completedSteps: [],
+                    isCompleted: false,
+                    tips: "IMPORTANT: Software CAN be added mid-year, but CANNOT be canceled mid-year. Ensure all removal decisions are confirmed before contract cutoffs.",
+                    notes: []
+                },
+                {
+                    id: "doc-7",
+                    title: "Annual Software Renewals: SW BOCES Library Databases",
+                    category: "Software Renewals",
+                    priority: "Medium",
+                    estTime: "1 hour",
+                    timeline: "Phase 3",
+                    summary: "Procedure for coordinating SW BOCES library database renewals, cart reviews with building librarians via the 'menu' portal, and Coser 511/512/513 signature processing.",
+                    prereqs: "Checkout User Account on menu.library.fyi, All Tech Sheet",
+                    contact: "Catherine Graybosch (cgraybosch@byramhills.net) / Darlene Viruet (SW BOCES - dviruet@swboces.org) / Erin Meyer (CH Librarian)",
+                    steps: [
+                        { title: "Set Up Checkout Account", detail: "Contact Darlene Viruet (dviruet@swboces.org) to set up a Checkout user account for 'menu.library.fyi'." },
+                        { title: "Coordinate Cart Review (March/April)", detail: "SW BOCES prepares cart based on prior year. BEFORE starting, speak with Erin Meyer (CH Librarian) who may want to coordinate. Email all librarians to review their building's cart." },
+                        { title: "Update Cart with Approved Changes", detail: "If librarians request additions/changes, obtain Kevin's approval first, then update the cart in Checkout." },
+                        { title: "Submit Order in Checkout", detail: "Once all building librarians confirm items are accurate, submit order through Checkout before the end of April deadline." },
+                        { title: "Audit & Sign Cosers (511, 512, 513)", detail: "SW BOCES creates Cosers. Audit received Cosers against the final cart in 'menu'. Ensure Business Office signs them and returns them to SW BOCES." }
+                    ],
+                    completedSteps: [],
+                    isCompleted: false,
+                    tips: "Always check with Erin Meyer (CH Librarian) before starting cart outreach to ensure smooth coordination across schools.",
                     notes: []
                 },
                 {
@@ -766,6 +872,26 @@
                     completedSteps: [0, 1],
                     isCompleted: false,
                     tips: "Keep calm! Customers on this escalation queue are usually stressed. Empathy and clear update timelines are key.",
+                    notes: []
+                },
+                {
+                    id: "doc-2",
+                    title: "Quarterly Vendor Invoice Audit & Reconciliation",
+                    category: "Financial & Audit",
+                    priority: "Medium",
+                    estTime: "45 mins",
+                    timeline: "Phase 3",
+                    summary: "Standard operating procedure to match vendor invoices against purchase orders before approving payments.",
+                    prereqs: "Stripe Admin & Accounting Portal",
+                    contact: "Finance Dept (billing@company.com)",
+                    steps: [
+                        { title: "Export Unpaid Invoices", detail: "Download CSV of all pending vendor invoices from the Finance Portal." },
+                        { title: "Cross-reference with PO Register", detail: "Match invoice amounts against signed Purchase Orders in Google Drive." },
+                        { title: "Submit Approved Ledger", detail: "Email approved ledger to Finance VP for final signoff." }
+                    ],
+                    completedSteps: [],
+                    isCompleted: false,
+                    tips: "Always check for early payment discount clauses on software renewals!",
                     notes: []
                 },
                 {
@@ -1113,7 +1239,14 @@
             document.getElementById('modalSummary').textContent = doc.summary;
             document.getElementById('modalContact').textContent = doc.contact || "Not specified";
             document.getElementById('modalPrereqs').textContent = doc.prereqs || "None required";
-            document.getElementById('modalLinks').textContent = doc.links || "N/A";
+            
+            // Format links
+            const linksEl = document.getElementById('modalLinks');
+            if (doc.links) {
+                linksEl.innerHTML = `<a href="${doc.links}" target="_blank" class="text-brand-600 underline hover:text-brand-800">${doc.links}</a>`;
+            } else {
+                linksEl.textContent = "N/A";
+            }
 
             // Render Steps Checklist
             const stepsList = document.getElementById('modalStepsList');
@@ -1129,7 +1262,7 @@
                                 <div class="font-bold text-sm text-slate-800 ${isChecked ? 'line-through text-slate-400' : ''}">
                                     Step ${index + 1}: ${step.title}
                                 </div>
-                                <div class="text-xs text-slate-600 ${isChecked ? 'text-slate-400' : ''}">${step.detail}</div>
+                                <div class="text-xs text-slate-600 leading-relaxed ${isChecked ? 'text-slate-400' : ''}">${step.detail}</div>
                             </div>
                         </div>
                     `;
@@ -1264,9 +1397,9 @@
             document.getElementById('editorModalTitle').textContent = "Create New Work SOP / Tutorial";
             document.getElementById('formDocId').value = "";
             document.getElementById('formTitle').value = "";
-            document.getElementById('formCategory').value = "Daily Routines";
+            document.getElementById('formCategory').value = "Software Renewals";
             document.getElementById('formPriority').value = "Medium";
-            document.getElementById('formEstTime').value = "20 mins";
+            document.getElementById('formEstTime').value = "30 mins";
             document.getElementById('formTimeline').value = "Phase 2";
             document.getElementById('formSummary').value = "";
             document.getElementById('formPrereqs').value = "";
